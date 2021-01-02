@@ -10,6 +10,22 @@
         WindowStartupLocation="CenterScreen"
         Background="#202020">
     <Grid>
-        
+        <ListBox Name="ProcessListbox" Background="#252525" BorderBrush="#151515" HorizontalAlignment="Left" Height="150" Margin="10,132,0,0" VerticalAlignment="Top" Width="572" />
+        <Button Name="AddButton" Click="AddButton_OnClick" Background="Transparent" BorderBrush="#151515" HorizontalAlignment="Left" Margin="10,102,0,0" VerticalAlignment="Top" Height="25" Width="25">
+            <Image Stretch="Fill" Source="../Icons/appbar.add.png" />
+        </Button>
+        <Button Name="StartButton" Click="StartButton_OnClick" Background="Transparent" BorderBrush="#151515" HorizontalAlignment="Left" Margin="40,102,0,0" VerticalAlignment="Top" Height="25" Width="25">
+            <Image Stretch="Fill" Source="/ProcessManager;component/Icons/appbar.control.play.png" />
+        </Button>
+        <Button Name="StopButton" Click="StopButton_OnClick" Background="Transparent" BorderBrush="#151515" HorizontalAlignment="Left" Margin="70,102,0,0" VerticalAlignment="Top" Height="25" Width="25">
+            <Image Stretch="Fill" Source="/ProcessManager;component/Icons/appbar.control.pause.png" />
+        </Button>
+        <Button Name="RemoveButton" Click="RemoveButton_OnClick" Background="Transparent" BorderBrush="#151515" HorizontalAlignment="Left" Margin="100,102,0,0" VerticalAlignment="Top" Height="25" Width="25">
+            <Image Stretch="Fill" Source="/ProcessManager;component/Icons/appbar.axis.x.letter.png" />
+        </Button>
+        <TextBlock Foreground="WhiteSmoke"  HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" Text="Process Manager" VerticalAlignment="Top" Height="30" Width="272" FontFamily="Yu Gothic UI" FontSize="20" Cursor="None"/>
+        <Button x:Name="ExitButton" Click="ExitButton_OnClick" Background="Transparent" BorderBrush="#151515" HorizontalAlignment="Left" Margin="557,10,0,0" VerticalAlignment="Top" Height="25" Width="25">
+            <Image Stretch="Fill" Source="/ProcessManager;component/Icons/appbar.axis.x.letter.png" />
+        </Button>
     </Grid>
 </Window>

@@ -35,28 +35,48 @@ namespace ProcessManager
             InitializeComponent();
         }
 
-        private void UIElement_OnMouseEnter(object sender, MouseEventArgs e)
+        private void AddButton_OnClick(object sender, RoutedEventArgs e)
         {
-            
+            FolderBrowserDialog dialog = new FolderBrowserDialog();
+            dialog.Description = "Process Working Directory.";
+            if (dialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            {
+                var inputWindow = new CommandLine();
+                if (inputWindow.ShowDialog() == true)
+                {
+                    var commandText = inputWindow.inputBox.Text;
+                    inputWindow.Close();
+                    var processModel = Managers.ProcessManager.StartProcess(dialog.SelectedPath, commandText);
+                    ProcessListbox.Items.Add(processModel);
+                }
+            }
         }
 
-        private void HomeButton_OnClick(object sender, RoutedEventArgs e)
+        private void StartButton_OnClick(object sender, RoutedEventArgs e)
         {
-            
+            var index = ProcessListbox.SelectedIndex;
+            var processModel = Managers.ProcessManager.Processes[index];
+            Managers.ProcessManager.StartProcess(processModel.Path, processModel.Command);
         }
 
-        private void InformationButton_OnClick(object sender, RoutedEventArgs e)
+        private void StopButton_OnClick(object sender, RoutedEventArgs e)
         {
-            
+            var index = ProcessListbox.SelectedIndex;
+            var processModel = Managers.ProcessManager.Processes[index];
+            Managers.ProcessManager.KillProcess(processModel.Process);
+        }
+
+        private void RemoveButton_OnClick(object sender, RoutedEventArgs e)
+        {
+            var index = ProcessListbox.SelectedIndex;
+            var processModel = Managers.ProcessManager.Processes[index];
+            Managers.ProcessManager.KillProcess(processModel);
+            ProcessListbox.Items.RemoveAt(index);
+            Managers.ProcessManager.Processes.RemoveAt(index);
         }
 
         private void ExitButton_OnClick(object sender, RoutedEventArgs e)
         {
-            var processes = Managers.ProcessManager.Processes;
-            foreach (var process in processes)
-            {
-                Managers.ProcessManager.KillProcessAndChildrens(process.Id);
-            }
             Application.Current.Shutdown();
         }
     }
