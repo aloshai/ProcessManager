@@ -1,0 +1,18 @@
+﻿<Window x:Class="ProcessManager.Modules.CommandLine"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ProcessManager.Modules"
+        mc:Ignorable="d"
+        Title="CommandLine" Height="100" Width="400"
+        WindowStyle="None"
+        Background="#404040"
+        WindowStartupLocation="CenterScreen"
+        ResizeMode="NoResize"
+        >
+    <Grid HorizontalAlignment="Center" VerticalAlignment="Center">
+        <TextBox Name="inputBox" Background="#454545" Foreground="White" BorderBrush="Transparent" HorizontalAlignment="Left" Height="23" Margin="10,10,0,0" TextWrapping="Wrap" Text="Command Line" VerticalAlignment="Top" Width="372"/>
+        <Button Background="#505050" BorderBrush="Transparent" Foreground="White" Content="Ready" HorizontalAlignment="Left" Margin="297,38,0,-5" VerticalAlignment="Top" Width="75" Click="Button_Click"/>
+    </Grid>
+</Window>

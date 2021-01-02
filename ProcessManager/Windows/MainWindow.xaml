@@ -5,11 +5,11 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ProcessManager"
         mc:Ignorable="d"
-        Title="Process Manager" Height="423.603" Width="800"
+        Title="Process Manager" Height="300" Width="600"
         WindowStyle="None"
-        WindowStartupLocation="CenterScreen">
-    <Grid Background="#202020">
-        <Button Click="ButtonBase_OnClick" Content="Button" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="178" Height="68"/>
-
+        WindowStartupLocation="CenterScreen"
+        Background="#202020">
+    <Grid>
+        
     </Grid>
 </Window>
